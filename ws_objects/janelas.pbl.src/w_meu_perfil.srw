@@ -320,7 +320,7 @@ end type
 
 type dw_show from datawindow within w_meu_perfil
 integer x = 1184
-integer y = 468
+integer y = 472
 integer width = 3104
 integer height = 1128
 integer taborder = 10
