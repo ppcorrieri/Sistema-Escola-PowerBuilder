@@ -15,7 +15,7 @@ global type w_meu_perfil from window
 integer width = 5495
 integer height = 2616
 boolean titlebar = true
-string title = "Meu Perfil"
+string title = "Meu Perfil 2"
 string menuname = "m_cadastro"
 windowstate windowstate = maximized!
 long backcolor = 67108864
