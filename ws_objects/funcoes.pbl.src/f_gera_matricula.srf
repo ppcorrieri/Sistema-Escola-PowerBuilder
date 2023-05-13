@@ -1,0 +1,53 @@
+﻿$PBExportHeader$f_gera_matricula.srf
+$PBExportComments$Função para geração de Matrícula
+global type f_gera_matricula from function_object
+end type
+
+forward prototypes
+global subroutine f_gera_matricula (datawindow dw_print)
+end prototypes
+
+global subroutine f_gera_matricula (datawindow dw_print);uo_matricula	uol_matricula
+uol_matricula = create uo_matricula
+
+uo_parametros_sistema	uol_parametros_sistema
+uol_parametros_sistema = create uo_parametros_sistema
+
+Integer vli_Opcao
+String vls_NomeAluno, vls_NomeCurso, vls_NomeTurma, vls_Mes
+Date vld_DataMatricula
+
+uol_matricula.of_obtem_dados_matricula( integer(vgs_Id_Usuario_Impressao_Visual) )
+uol_parametros_sistema.of_recupera_parametro(1)
+
+integer(vgs_Id_Usuario_Impressao_Visual)
+
+dw_print.retrieve(integer(vgs_Id_Usuario_Impressao_Visual))
+
+dw_print.object.t_titulo.Text = 'DECLARAÇÃO DE MATRÍCULA'
+
+dw_print.object.t_texto_declaracao.Text = 'Declaramos para os devidos fins que '+uol_matricula.vis_NomeAluno+', nascido(a) em '+string(uol_matricula.vid_DataNascimento)+', portador(a) do CPF '+String(Mid(string(uol_matricula.vis_Cpf), 1, 3)) + '.' + String(Mid(string(uol_matricula.vis_Cpf), 4, 3)) + '.' + String(Mid(string(uol_matricula.vis_Cpf), 7, 3)) + '-' + String(Mid(string(uol_matricula.vis_Cpf), 10, 2)) +' é aluno(a) do curso '+uol_matricula.vis_NomeCurso+', na instituição '+uol_parametros_sistema.vis_NomeSis+', regularmente matriculado na turma '+uol_matricula.vis_Turma+', desde '+string(uol_matricula.vid_DataMatricula)+'.'
+
+vls_Mes = f_traducao_mes(String(Today(), "mm"))
+
+dw_print.object.t_data_declaracao.Text = ''+uol_parametros_sistema.vis_Cidade+', ' +String(Today(), "d")+' de '+vls_Mes+' de '+String(Today(), "YYYY")+''
+
+//Assinatura
+dw_print.object.p_assinatura.filename = uol_parametros_sistema.vis_AssinaturaDir
+
+//Emissão do Doc
+dw_print.object.t_emissao.Text = 'Documento emitido às '+string(now(), "hh:mm")+'h do dia ' +String(Today(), "dd/mm/yyyy")+''
+
+// Nome do Sistema
+dw_print.object.t_nomesistema1.Text = uol_parametros_sistema.vis_nomesis
+// Nome do Sistema
+dw_print.object.t_nomesistema2.Text = uol_parametros_sistema.vis_nomesis
+
+//Endereço
+dw_print.object.t_endereco.Text = uol_parametros_sistema.vis_Endereco
+
+//CEP
+dw_print.object.t_CEP.Text = 'CEP: '+Left(uol_parametros_sistema.vis_CEP,5)+'-'+Mid(uol_parametros_sistema.vis_CEP,5,3)+''
+
+end subroutine
+

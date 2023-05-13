@@ -1,0 +1,160 @@
+﻿$PBExportHeader$f_salvarcomopdf.srf
+global type f_salvarcomopdf from function_object
+end type
+
+forward prototypes
+global function integer f_salvarcomopdf (ref datastore p_datastore, ref datawindow p_datawindow, string p_nome_arquivo, boolean p_replace_file)
+end prototypes
+
+global function integer f_salvarcomopdf (ref datastore p_datastore, ref datawindow p_datawindow, string p_nome_arquivo, boolean p_replace_file);DataWindowChild DWCAux
+Integer k
+string vlsaux,vlsnomecol
+long vllret
+boolean VLBUtilizaGS, VLBDataWindow = false
+
+//Verifica se arquivo já existe e faz o tratamento
+if p_nome_arquivo <> '' and not isnull(p_nome_arquivo) then
+	if fileexists(p_nome_arquivo) then 
+		IF p_replace_file then 
+			if filedelete(p_nome_arquivo) = false then 
+				return 0 
+			end if 
+		else 
+			return 0 
+		end if 
+	end if
+end if
+
+//Idenfifica se o Controle é DataWindow ou DataStore
+If isvalid(p_datastore) then
+	VLBDataWindow = false
+else 
+	VLBDataWindow = true
+end if
+
+If VLBDataWindow and not(IsValid(p_dataWindow)) then 
+	//Não foi passada nenhuma datawindow ou datastore 
+	return -1
+end if
+
+//define as configurações de PDF a ser utilizada
+//Verifica se o GhostScript está instalado
+VLLRet = RegistryGet( "HKEY_LOCAL_MACHINE\SOFTWARE\GNU Ghostscript\7.05","GS_DLL", RegString!, VLSAux) 
+if VLLRet < 0 or VLSAux = '' then 
+	VLBUtilizaGS = false
+else 
+	VLBUtilizaGS = true
+end if
+
+IF VLBDataWindow then 
+	if VLBUtilizaGS then 
+		//Se o GhostScript tiver instalado, configura a DataWidnow para utiliza-lo 
+		p_datawindow.Object.DataWindow.Export.PDF.Distill.CustomPostScript='No' 
+		p_datawindow.Object.DataWindow.Export.PDF.Method = Distill! 
+		p_datawindow.Object.DataWindow.Export.PDF.XSLFOP.Print='No' 
+	else 
+		//Se o GhostScript não tiver instalado, configura a DataWidnow para utilizar XSL-FOP 
+		p_datawindow.Object.DataWindow.Export.PDF.Distill.CustomPostScript='NO' 
+		p_datawindow.Object.DataWindow.Export.PDF.Method = XSLFOP! 
+		p_datawindow.Object.DataWindow.Export.PDF.XSLFOP.Print='Yes' 
+	end if
+	
+	if p_datawindow.getsqlselect() = "" and &
+		p_datawindow.Object.DataWindow.nested <> 'yes' then // É uma external 
+		k = p_datawindow.getcolumn() 
+		// Pegar o Nome da Coluna 
+		VLSAux = '#'+String(K)+'.Name' 
+		VLSNomeCol = p_datawindow.Describe(VLSAux) 
+		if Lower(p_datawindow.Describe(VLSNomeCol + ".Edit.Style")) = 'dddw' then 
+			p_datawindow.getchild(vlsnomecol,dwcaux) 
+			if VLBUtilizaGS then 
+				//Se o GhostScript tiver instalado, configura a DataWidnow para utiliza-lo 
+				dwcaux.modify("DataWindow.Export.PDF.Distill.CustomPostScript='No'") 
+				dwcaux.modify("DataWindow.Export.PDF.Method = Distill!") 
+				dwcaux.modify("DataWindow.Export.PDF.XSLFOP.Print='No'") 
+			else
+				//Se o GhostScript não tiver instalado, configura a DataWidnow para utilizar XSL-FOP 
+				dwcaux.modify("DataWindow.Export.PDF.Distill.CustomPostScript='NO'") 
+				dwcaux.modify("DataWindow.Export.PDF.Method = XSLFOP!") 
+				dwcaux.modify("DataWindow.Export.PDF.XSLFOP.Print='Yes'") 
+			end if
+			if p_nome_arquivo <> '' and not isnull(p_nome_arquivo) then 
+				dwcaux.saveas(p_nome_arquivo,pdf!,true) 
+			else 
+				dwcaux.saveas()
+			end if
+			else 
+				if p_nome_arquivo <> '' and not isnull(p_nome_arquivo) then 
+					p_datawindow.saveas(p_nome_arquivo,pdf!,true) 
+			else 
+				p_datawindow.saveas() 
+			end if 
+		end if 
+	else
+		if p_nome_arquivo <> '' and not isnull(p_nome_arquivo) then 
+			p_datawindow.saveas(p_nome_arquivo,pdf!,true) 
+		else 
+			p_datawindow.saveas() 
+		end if 
+	end if
+else 
+	if VLBUtilizaGS then 
+		//Se o GhostScript tiver instalado, configura a DataWidnow para utiliza-lo 
+		p_datastore.Object.DataWindow.Export.PDF.Distill.CustomPostScript='No' 
+		p_datastore.Object.DataWindow.Export.PDF.Method = Distill! 
+		p_datastore.Object.DataWindow.Export.PDF.XSLFOP.Print='No' 
+	else 
+		//Se o GhostScript não tiver instalado, configura a DataWidnow para utilizar XSL-FOP 
+		p_datastore.Object.DataWindow.Export.PDF.Distill.CustomPostScript='NO' 
+		p_datastore.Object.DataWindow.Export.PDF.Method = XSLFOP! 
+		p_datastore.Object.DataWindow.Export.PDF.XSLFOP.Print='Yes' 
+	end if 
+	
+	if p_datastore.getsqlselect() = "" and & 
+		p_datastore.Object.DataWindow.nested <> 'yes' then 
+		// É uma external 
+		k = p_datastore.getcolumn() 
+		// Pegar o Nome da Coluna 
+		VLSAux = '#'+String(K)+'.Name' 
+		VLSNomeCol = p_datastore.Describe(VLSAux) 
+		if Lower(p_datastore.Describe(VLSNomeCol + ".Edit.Style")) = 'dddw' then 
+			p_datastore.getchild(vlsnomecol,dwcaux) 
+			if VLBUtilizaGS then 
+				//Se o GhostScript tiver instalado, configura a DataWidnow para utiliza-lo 
+				dwcaux.modify("DataWindow.Export.PDF.Distill.CustomPostScript='No'") 
+				dwcaux.modify("DataWindow.Export.PDF.Method = Distill!") 
+				dwcaux.modify("DataWindow.Export.PDF.XSLFOP.Print='No'") 
+			else //Se o GhostScript não tiver instalado, configura a DataWidnow para utilizar XSL-FOP 
+				dwcaux.modify("DataWindow.Export.PDF.Distill.CustomPostScript='NO'") 
+				dwcaux.modify("DataWindow.Export.PDF.Method = XSLFOP!") 
+				dwcaux.modify("DataWindow.Export.PDF.XSLFOP.Print='Yes'") 
+			end if 
+			if p_nome_arquivo <> '' and not isnull(p_nome_arquivo) then 
+				dwcaux.saveas(p_nome_arquivo,pdf!,true) 
+			else 
+				dwcaux.saveas() 
+			end if 
+		else 
+			if p_nome_arquivo <> '' and not isnull(p_nome_arquivo) then 
+			p_datastore.saveas(p_nome_arquivo,pdf!,true) 
+		else 
+			p_datastore.saveas() 
+		end if 
+	end if 
+else 
+	if p_nome_arquivo <> '' and not isnull(p_nome_arquivo) then 
+	p_datastore.saveas(p_nome_arquivo,pdf!,true) 
+else 
+	p_datastore.saveas() 
+end if 
+end if
+end if
+return 1
+			
+
+
+
+
+
+end function
+

@@ -1,0 +1,42 @@
+﻿$PBExportHeader$f_traducao_mes.srf
+$PBExportComments$Função para realizar a tradução dos meses.
+global type f_traducao_mes from function_object
+end type
+
+forward prototypes
+global function string f_traducao_mes (string mes)
+end prototypes
+
+global function string f_traducao_mes (string mes);//Função para a Tradução dos meses
+String vls_Mes
+
+choose case mes
+	case '01'
+		vls_Mes = 'Janeiro'
+	case '02'
+		vls_Mes = 'Fevereiro'
+	case '03'
+		vls_Mes = 'Março'
+	case '04'
+		vls_Mes = 'Abril'
+	case '05'
+		vls_Mes = 'Maio'
+	case '06'
+		vls_Mes = 'Junho'
+	case '07'
+		vls_Mes = 'Julho'
+	case '08'
+		vls_Mes = 'Agosto'
+	case '09'
+		vls_Mes = 'Setembro'
+	case '10'
+		vls_Mes = 'Outubro'
+	case '11'
+		vls_Mes = 'Novembro'
+	case '12'
+		vls_Mes = 'Dezembro'
+end choose
+
+return vls_Mes
+end function
+

@@ -1,0 +1,1498 @@
+﻿$PBExportHeader$m_principal.srm
+$PBExportComments$Menu Principal da Aplicação
+forward
+global type m_principal from menu
+end type
+type m_arquivo from menu within m_principal
+end type
+type m_meuperfil from menu within m_arquivo
+end type
+type m_sair from menu within m_arquivo
+end type
+type m_arquivo from menu within m_principal
+m_meuperfil m_meuperfil
+m_sair m_sair
+end type
+type m_0 from menu within m_principal
+end type
+type m_instrutores from menu within m_0
+end type
+type m_1novoinstrutor from menu within m_instrutores
+end type
+type m_instrutores from menu within m_0
+m_1novoinstrutor m_1novoinstrutor
+end type
+type m_cursos from menu within m_0
+end type
+type m_1novocurso from menu within m_cursos
+end type
+type m_cursos from menu within m_0
+m_1novocurso m_1novocurso
+end type
+type m_alunos from menu within m_0
+end type
+type m_3 from menu within m_alunos
+end type
+type m_alunos from menu within m_0
+m_3 m_3
+end type
+type m_matrículas from menu within m_0
+end type
+type m_1novoaluno from menu within m_matrículas
+end type
+type m_matrículas from menu within m_0
+m_1novoaluno m_1novoaluno
+end type
+type m_turmas from menu within m_0
+end type
+type m_1novaturma from menu within m_turmas
+end type
+type m_turmas from menu within m_0
+m_1novaturma m_1novaturma
+end type
+type m_0 from menu within m_principal
+m_instrutores m_instrutores
+m_cursos m_cursos
+m_alunos m_alunos
+m_matrículas m_matrículas
+m_turmas m_turmas
+end type
+type m_manutenção from menu within m_principal
+end type
+type m_sistema from menu within m_manutenção
+end type
+type m_parâmetrosdosistema from menu within m_sistema
+end type
+type m_sistema from menu within m_manutenção
+m_parâmetrosdosistema m_parâmetrosdosistema
+end type
+type m_turmas0 from menu within m_manutenção
+end type
+type m_manutençãodeturma from menu within m_turmas0
+end type
+type m_turmas0 from menu within m_manutenção
+m_manutençãodeturma m_manutençãodeturma
+end type
+type m_tickets0 from menu within m_manutenção
+end type
+type m_manutençãoconsultagerencialdetickets from menu within m_tickets0
+end type
+type m_tickets0 from menu within m_manutenção
+m_manutençãoconsultagerencialdetickets m_manutençãoconsultagerencialdetickets
+end type
+type m_matrículas1 from menu within m_manutenção
+end type
+type m_finalizarmatrícula from menu within m_matrículas1
+end type
+type m_matrículas1 from menu within m_manutenção
+m_finalizarmatrícula m_finalizarmatrícula
+end type
+type m_manutenção from menu within m_principal
+m_sistema m_sistema
+m_turmas0 m_turmas0
+m_tickets0 m_tickets0
+m_matrículas1 m_matrículas1
+end type
+type m_consultas from menu within m_principal
+end type
+type m_alunos0 from menu within m_consultas
+end type
+type m_consultardadosdealunos from menu within m_alunos0
+end type
+type m_alunos0 from menu within m_consultas
+m_consultardadosdealunos m_consultardadosdealunos
+end type
+type m_matrículas0 from menu within m_consultas
+end type
+type m_analíticodematrículas from menu within m_matrículas0
+end type
+type m_matrículas0 from menu within m_consultas
+m_analíticodematrículas m_analíticodematrículas
+end type
+type m_turmas1 from menu within m_consultas
+end type
+type m_acompanhamentodeturmas from menu within m_turmas1
+end type
+type m_turmas1 from menu within m_consultas
+m_acompanhamentodeturmas m_acompanhamentodeturmas
+end type
+type m_consultas from menu within m_principal
+m_alunos0 m_alunos0
+m_matrículas0 m_matrículas0
+m_turmas1 m_turmas1
+end type
+type m_serviços from menu within m_principal
+end type
+type m_gerardeclaraçãodematrícula from menu within m_serviços
+end type
+type m_serviços from menu within m_principal
+m_gerardeclaraçãodematrícula m_gerardeclaraçãodematrícula
+end type
+type m_sobre from menu within m_principal
+end type
+type m_sobreosistema from menu within m_sobre
+end type
+type m_tickets from menu within m_sobre
+end type
+type m_novoticket from menu within m_tickets
+end type
+type m_meustickets from menu within m_tickets
+end type
+type m_tickets from menu within m_sobre
+m_novoticket m_novoticket
+m_meustickets m_meustickets
+end type
+type m_sobre from menu within m_principal
+m_sobreosistema m_sobreosistema
+m_tickets m_tickets
+end type
+type m_fecharjanela from menu within m_principal
+end type
+global type m_principal from menu
+m_arquivo m_arquivo
+m_0 m_0
+m_manutenção m_manutenção
+m_consultas m_consultas
+m_serviços m_serviços
+m_sobre m_sobre
+m_fecharjanela m_fecharjanela
+end type
+end forward
+
+global type m_principal from menu
+m_arquivo m_arquivo
+m_0 m_0
+m_manutenção m_manutenção
+m_consultas m_consultas
+m_serviços m_serviços
+m_sobre m_sobre
+m_fecharjanela m_fecharjanela
+end type
+global m_principal m_principal
+
+on m_principal.create
+m_principal=this
+call super::create
+this.text = "m_principal"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.fontfamily = swiss!
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_arquivo=create m_arquivo
+this.m_0=create m_0
+this.m_manutenção=create m_manutenção
+this.m_consultas=create m_consultas
+this.m_serviços=create m_serviços
+this.m_sobre=create m_sobre
+this.m_fecharjanela=create m_fecharjanela
+this.Item[UpperBound(this.Item)+1]=this.m_arquivo
+this.Item[UpperBound(this.Item)+1]=this.m_0
+this.Item[UpperBound(this.Item)+1]=this.m_manutenção
+this.Item[UpperBound(this.Item)+1]=this.m_consultas
+this.Item[UpperBound(this.Item)+1]=this.m_serviços
+this.Item[UpperBound(this.Item)+1]=this.m_sobre
+this.Item[UpperBound(this.Item)+1]=this.m_fecharjanela
+end on
+
+on m_principal.destroy
+call super::destroy
+destroy(this.m_arquivo)
+destroy(this.m_0)
+destroy(this.m_manutenção)
+destroy(this.m_consultas)
+destroy(this.m_serviços)
+destroy(this.m_sobre)
+destroy(this.m_fecharjanela)
+end on
+
+type m_arquivo from menu within m_principal
+m_meuperfil m_meuperfil
+m_sair m_sair
+end type
+
+on m_arquivo.create
+call super::create
+this.text = "Arquivo"
+this.toolbaritemvisible = false
+this.toolbaritemtext = "Arquivo"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_meuperfil=create m_meuperfil
+this.m_sair=create m_sair
+this.Item[UpperBound(this.Item)+1]=this.m_meuperfil
+this.Item[UpperBound(this.Item)+1]=this.m_sair
+end on
+
+on m_arquivo.destroy
+call super::destroy
+destroy(this.m_meuperfil)
+destroy(this.m_sair)
+end on
+
+type m_meuperfil from menu within m_arquivo
+end type
+
+on m_meuperfil.create
+call super::create
+this.text = "Meu Perfil"
+this.microhelp = "Meu Perfil"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-profile-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_meuperfil.destroy
+call super::destroy
+end on
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_meu_perfil, w_principal, 1, Original!)
+end event
+
+type m_sair from menu within m_arquivo
+end type
+
+event clicked;Close(w_principal)
+
+end event
+
+on m_sair.create
+call super::create
+this.text = "Sair~tAlt+F4"
+this.shortcut = 627
+this.microhelp = "Sair"
+this.toolbaritemorder = 999
+this.toolbaritemspace = 1
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-logout-24_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_sair.destroy
+call super::destroy
+end on
+
+type m_0 from menu within m_principal
+m_instrutores m_instrutores
+m_cursos m_cursos
+m_alunos m_alunos
+m_matrículas m_matrículas
+m_turmas m_turmas
+end type
+
+on m_0.create
+call super::create
+this.text = "Cadastros"
+this.toolbaritemvisible = false
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_instrutores=create m_instrutores
+this.m_cursos=create m_cursos
+this.m_alunos=create m_alunos
+this.m_matrículas=create m_matrículas
+this.m_turmas=create m_turmas
+this.Item[UpperBound(this.Item)+1]=this.m_instrutores
+this.Item[UpperBound(this.Item)+1]=this.m_cursos
+this.Item[UpperBound(this.Item)+1]=this.m_alunos
+this.Item[UpperBound(this.Item)+1]=this.m_matrículas
+this.Item[UpperBound(this.Item)+1]=this.m_turmas
+end on
+
+on m_0.destroy
+call super::destroy
+destroy(this.m_instrutores)
+destroy(this.m_cursos)
+destroy(this.m_alunos)
+destroy(this.m_matrículas)
+destroy(this.m_turmas)
+end on
+
+type m_instrutores from menu within m_0
+m_1novoinstrutor m_1novoinstrutor
+end type
+
+on m_instrutores.create
+call super::create
+this.text = "Instrutores"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_1novoinstrutor=create m_1novoinstrutor
+this.Item[UpperBound(this.Item)+1]=this.m_1novoinstrutor
+end on
+
+on m_instrutores.destroy
+call super::destroy
+destroy(this.m_1novoinstrutor)
+end on
+
+type m_1novoinstrutor from menu within m_instrutores
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_cadastro_instrutor, w_principal, 1, Original!)
+end event
+
+on m_1novoinstrutor.create
+call super::create
+this.text = "Novo Instrutor"
+this.microhelp = "Novo Instrutor"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-teacher-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_1novoinstrutor.destroy
+call super::destroy
+end on
+
+type m_cursos from menu within m_0
+m_1novocurso m_1novocurso
+end type
+
+on m_cursos.create
+call super::create
+this.text = "Cursos"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_1novocurso=create m_1novocurso
+this.Item[UpperBound(this.Item)+1]=this.m_1novocurso
+end on
+
+on m_cursos.destroy
+call super::destroy
+destroy(this.m_1novocurso)
+end on
+
+type m_1novocurso from menu within m_cursos
+end type
+
+on m_1novocurso.create
+call super::create
+this.text = "Novo Curso"
+this.microhelp = "Novo Curso"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-create-document-48_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_1novocurso.destroy
+call super::destroy
+end on
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_cadastro_curso, w_principal, 1, Original!)
+
+end event
+
+type m_alunos from menu within m_0
+m_3 m_3
+end type
+
+on m_alunos.create
+call super::create
+this.text = "Alunos"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_3=create m_3
+this.Item[UpperBound(this.Item)+1]=this.m_3
+end on
+
+on m_alunos.destroy
+call super::destroy
+destroy(this.m_3)
+end on
+
+type m_3 from menu within m_alunos
+end type
+
+on m_3.create
+call super::create
+this.text = "Novo Aluno"
+this.microhelp = "Novo Aluno"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-customer-48_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_3.destroy
+call super::destroy
+end on
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_cadastro_aluno, w_principal, 1, Original!)
+end event
+
+type m_matrículas from menu within m_0
+m_1novoaluno m_1novoaluno
+end type
+
+on m_matrículas.create
+call super::create
+this.text = "Matrículas"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_1novoaluno=create m_1novoaluno
+this.Item[UpperBound(this.Item)+1]=this.m_1novoaluno
+end on
+
+on m_matrículas.destroy
+call super::destroy
+destroy(this.m_1novoaluno)
+end on
+
+type m_1novoaluno from menu within m_matrículas
+end type
+
+on m_1novoaluno.create
+call super::create
+this.text = "Nova Matrícula"
+this.microhelp = "Nova Matrícula"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-signing-a-document-48_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_1novoaluno.destroy
+call super::destroy
+end on
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_cadastro_matricula, w_principal, 1, Original!)
+end event
+
+type m_turmas from menu within m_0
+m_1novaturma m_1novaturma
+end type
+
+on m_turmas.create
+call super::create
+this.text = "Turmas"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_1novaturma=create m_1novaturma
+this.Item[UpperBound(this.Item)+1]=this.m_1novaturma
+end on
+
+on m_turmas.destroy
+call super::destroy
+destroy(this.m_1novaturma)
+end on
+
+type m_1novaturma from menu within m_turmas
+end type
+
+on m_1novaturma.create
+call super::create
+this.text = "Nova Turma"
+this.microhelp = "Nova Turma"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-class-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_1novaturma.destroy
+call super::destroy
+end on
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_cadastro_turmas, w_principal, 1, Original!)
+end event
+
+type m_manutenção from menu within m_principal
+m_sistema m_sistema
+m_turmas0 m_turmas0
+m_tickets0 m_tickets0
+m_matrículas1 m_matrículas1
+end type
+
+on m_manutenção.create
+call super::create
+this.text = "Manutenção"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_sistema=create m_sistema
+this.m_turmas0=create m_turmas0
+this.m_tickets0=create m_tickets0
+this.m_matrículas1=create m_matrículas1
+this.Item[UpperBound(this.Item)+1]=this.m_sistema
+this.Item[UpperBound(this.Item)+1]=this.m_turmas0
+this.Item[UpperBound(this.Item)+1]=this.m_tickets0
+this.Item[UpperBound(this.Item)+1]=this.m_matrículas1
+end on
+
+on m_manutenção.destroy
+call super::destroy
+destroy(this.m_sistema)
+destroy(this.m_turmas0)
+destroy(this.m_tickets0)
+destroy(this.m_matrículas1)
+end on
+
+type m_sistema from menu within m_manutenção
+m_parâmetrosdosistema m_parâmetrosdosistema
+end type
+
+on m_sistema.create
+call super::create
+this.text = "Sistema"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_parâmetrosdosistema=create m_parâmetrosdosistema
+this.Item[UpperBound(this.Item)+1]=this.m_parâmetrosdosistema
+end on
+
+on m_sistema.destroy
+call super::destroy
+destroy(this.m_parâmetrosdosistema)
+end on
+
+type m_parâmetrosdosistema from menu within m_sistema
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_manutencao_parametros_sistema, w_principal, 1, Original!)
+end event
+
+on m_parâmetrosdosistema.create
+call super::create
+this.text = "Parâmetros do Sistema"
+this.microhelp = "Parâmetros do Sistema"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-settings-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_parâmetrosdosistema.destroy
+call super::destroy
+end on
+
+type m_turmas0 from menu within m_manutenção
+m_manutençãodeturma m_manutençãodeturma
+end type
+
+on m_turmas0.create
+call super::create
+this.text = "Turmas"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_manutençãodeturma=create m_manutençãodeturma
+this.Item[UpperBound(this.Item)+1]=this.m_manutençãodeturma
+end on
+
+on m_turmas0.destroy
+call super::destroy
+destroy(this.m_manutençãodeturma)
+end on
+
+type m_manutençãodeturma from menu within m_turmas0
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_manutencao_turmas, w_principal, 1, Original!)
+end event
+
+on m_manutençãodeturma.create
+call super::create
+this.text = "Manutenção de Turma"
+this.microhelp = "Manutenção de Turma"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-class-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_manutençãodeturma.destroy
+call super::destroy
+end on
+
+type m_tickets0 from menu within m_manutenção
+m_manutençãoconsultagerencialdetickets m_manutençãoconsultagerencialdetickets
+end type
+
+on m_tickets0.create
+call super::create
+this.text = "Tickets"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_manutençãoconsultagerencialdetickets=create m_manutençãoconsultagerencialdetickets
+this.Item[UpperBound(this.Item)+1]=this.m_manutençãoconsultagerencialdetickets
+end on
+
+on m_tickets0.destroy
+call super::destroy
+destroy(this.m_manutençãoconsultagerencialdetickets)
+end on
+
+type m_manutençãoconsultagerencialdetickets from menu within m_tickets0
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_manutencao_tickets, w_principal, 1, Original!)
+end event
+
+on m_manutençãoconsultagerencialdetickets.create
+call super::create
+this.text = "Manutenção / Consulta Gerencial de Tickets"
+this.microhelp = "Manutenção / Consulta Gerencial de Tickets"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-wechat-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_manutençãoconsultagerencialdetickets.destroy
+call super::destroy
+end on
+
+type m_matrículas1 from menu within m_manutenção
+m_finalizarmatrícula m_finalizarmatrícula
+end type
+
+on m_matrículas1.create
+call super::create
+this.text = "Matrículas"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_finalizarmatrícula=create m_finalizarmatrícula
+this.Item[UpperBound(this.Item)+1]=this.m_finalizarmatrícula
+end on
+
+on m_matrículas1.destroy
+call super::destroy
+destroy(this.m_finalizarmatrícula)
+end on
+
+type m_finalizarmatrícula from menu within m_matrículas1
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_manutencao_matriculas, w_principal, 1, Original!)
+end event
+
+on m_finalizarmatrícula.create
+call super::create
+this.text = "Finalizar Matrícula"
+this.microhelp = "Finalizar Matrícula"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-delete-receipt-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_finalizarmatrícula.destroy
+call super::destroy
+end on
+
+type m_consultas from menu within m_principal
+m_alunos0 m_alunos0
+m_matrículas0 m_matrículas0
+m_turmas1 m_turmas1
+end type
+
+on m_consultas.create
+call super::create
+this.text = "Consultas"
+this.mergeoption = editmenu!
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_alunos0=create m_alunos0
+this.m_matrículas0=create m_matrículas0
+this.m_turmas1=create m_turmas1
+this.Item[UpperBound(this.Item)+1]=this.m_alunos0
+this.Item[UpperBound(this.Item)+1]=this.m_matrículas0
+this.Item[UpperBound(this.Item)+1]=this.m_turmas1
+end on
+
+on m_consultas.destroy
+call super::destroy
+destroy(this.m_alunos0)
+destroy(this.m_matrículas0)
+destroy(this.m_turmas1)
+end on
+
+type m_alunos0 from menu within m_consultas
+m_consultardadosdealunos m_consultardadosdealunos
+end type
+
+on m_alunos0.create
+call super::create
+this.text = "Alunos"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_consultardadosdealunos=create m_consultardadosdealunos
+this.Item[UpperBound(this.Item)+1]=this.m_consultardadosdealunos
+end on
+
+on m_alunos0.destroy
+call super::destroy
+destroy(this.m_consultardadosdealunos)
+end on
+
+type m_consultardadosdealunos from menu within m_alunos0
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_consulta_dados_aluno, w_principal, 1, Original!)
+end event
+
+on m_consultardadosdealunos.create
+call super::create
+this.text = "Consultar Dados do Aluno"
+this.microhelp = "Consultar Dados do Aluno"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-search-client-48_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_consultardadosdealunos.destroy
+call super::destroy
+end on
+
+type m_matrículas0 from menu within m_consultas
+m_analíticodematrículas m_analíticodematrículas
+end type
+
+on m_matrículas0.create
+call super::create
+this.text = "Matrículas"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_analíticodematrículas=create m_analíticodematrículas
+this.Item[UpperBound(this.Item)+1]=this.m_analíticodematrículas
+end on
+
+on m_matrículas0.destroy
+call super::destroy
+destroy(this.m_analíticodematrículas)
+end on
+
+type m_analíticodematrículas from menu within m_matrículas0
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_instrutor_turma_curso_aluno, w_principal, 1, Original!)
+end event
+
+on m_analíticodematrículas.create
+call super::create
+this.text = "Analítico de Matrículas por Turmas"
+this.microhelp = "Analítico de Matrículas por Turmas"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-important-note-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_analíticodematrículas.destroy
+call super::destroy
+end on
+
+type m_turmas1 from menu within m_consultas
+m_acompanhamentodeturmas m_acompanhamentodeturmas
+end type
+
+on m_turmas1.create
+call super::create
+this.text = "Turmas"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_acompanhamentodeturmas=create m_acompanhamentodeturmas
+this.Item[UpperBound(this.Item)+1]=this.m_acompanhamentodeturmas
+end on
+
+on m_turmas1.destroy
+call super::destroy
+destroy(this.m_acompanhamentodeturmas)
+end on
+
+type m_acompanhamentodeturmas from menu within m_turmas1
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_consulta_andamento_turmas, w_principal, 1, Original!)
+end event
+
+on m_acompanhamentodeturmas.create
+call super::create
+this.text = "Acompanhamento de Turmas"
+this.microhelp = "Acompanhamento de Turmas"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-class-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_acompanhamentodeturmas.destroy
+call super::destroy
+end on
+
+type m_serviços from menu within m_principal
+m_gerardeclaraçãodematrícula m_gerardeclaraçãodematrícula
+end type
+
+on m_serviços.create
+call super::create
+this.text = "Serviços"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_gerardeclaraçãodematrícula=create m_gerardeclaraçãodematrícula
+this.Item[UpperBound(this.Item)+1]=this.m_gerardeclaraçãodematrícula
+end on
+
+on m_serviços.destroy
+call super::destroy
+destroy(this.m_gerardeclaraçãodematrícula)
+end on
+
+type m_gerardeclaraçãodematrícula from menu within m_serviços
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_servicos_gera_declaracao, w_principal, 1, Original!)
+end event
+
+on m_gerardeclaraçãodematrícula.create
+call super::create
+this.text = "Gerar Declaração de Matrícula"
+this.microhelp = "Declaração de Matrícula"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-profile-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_gerardeclaraçãodematrícula.destroy
+call super::destroy
+end on
+
+type m_sobre from menu within m_principal
+m_sobreosistema m_sobreosistema
+m_tickets m_tickets
+end type
+
+on m_sobre.create
+call super::create
+this.text = "Suporte"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_sobreosistema=create m_sobreosistema
+this.m_tickets=create m_tickets
+this.Item[UpperBound(this.Item)+1]=this.m_sobreosistema
+this.Item[UpperBound(this.Item)+1]=this.m_tickets
+end on
+
+on m_sobre.destroy
+call super::destroy
+destroy(this.m_sobreosistema)
+destroy(this.m_tickets)
+end on
+
+type m_sobreosistema from menu within m_sobre
+end type
+
+on m_sobreosistema.create
+call super::create
+this.text = "Sobre o Sistema"
+this.microhelp = "Sobre o Sistema"
+this.menuitemtype = menuitemtypehelp!
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-info-48_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_sobreosistema.destroy
+call super::destroy
+end on
+
+event clicked;open(w_sobre_programa)
+end event
+
+type m_tickets from menu within m_sobre
+m_novoticket m_novoticket
+m_meustickets m_meustickets
+end type
+
+on m_tickets.create
+call super::create
+this.text = "Tickets"
+this.microhelp = "Tickets"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_novoticket=create m_novoticket
+this.m_meustickets=create m_meustickets
+this.Item[UpperBound(this.Item)+1]=this.m_novoticket
+this.Item[UpperBound(this.Item)+1]=this.m_meustickets
+end on
+
+on m_tickets.destroy
+call super::destroy
+destroy(this.m_novoticket)
+destroy(this.m_meustickets)
+end on
+
+type m_novoticket from menu within m_tickets
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_novo_ticket, w_principal, 1, Original!)
+end event
+
+on m_novoticket.create
+call super::create
+this.text = "Novo Ticket"
+this.microhelp = "Novo Ticket"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-get-help-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_novoticket.destroy
+call super::destroy
+end on
+
+type m_meustickets from menu within m_tickets
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_consultar_tickets, w_principal, 1, Original!)
+end event
+
+on m_meustickets.create
+call super::create
+this.text = "Acompanhamento de Tickets"
+this.microhelp = "Acompanhamento de Tickets"
+this.menuimage = "C:\Users\Pedro Paulo\Desktop\Nova pasta (2)\icons8-service-16.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_meustickets.destroy
+call super::destroy
+end on
+
+type m_fecharjanela from menu within m_principal
+end type
+
+event clicked;window activesheet
+activesheet = w_principal.GetActiveSheet()
+
+IF IsValid(activesheet) THEN
+	close(ParentWindow)
+END IF
+end event
+
+on m_fecharjanela.create
+call super::create
+this.text = "Fechar Janela"
+this.microhelp = "Fechar Janela"
+this.toolbaritemorder = 9999
+this.mergeoption = windowmenu!
+this.menuitemtype = menuitemtypeexit!
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_fecharjanela.destroy
+call super::destroy
+end on
+

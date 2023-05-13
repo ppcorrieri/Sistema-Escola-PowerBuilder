@@ -1,0 +1,30 @@
+﻿$PBExportHeader$f_finalizamatriculaautomatica.srf
+$PBExportComments$Função paraverificar se a data de hoje é maior que a data_final da turma ao abrir o Sistema
+global type f_finalizamatriculaautomatica from function_object
+end type
+
+forward prototypes
+global subroutine f_finalizamatriculaautomatica ()
+end prototypes
+
+global subroutine f_finalizamatriculaautomatica ();//---------------------------------------------------------------------------------------
+//  Função  : f_FinalizaMatriculaAutomatica
+//  Objetivo: Ao Abrir o Sistema, sempre será chamada e fazer a verificação
+//				Verifica se a data de hoje é maior que a data_final da turma
+//---------------------------------------------------------------------------------------
+
+DELETE matriculas 
+FROM matriculas, usuarios,turmas,cursos
+WHERE
+usuarios.id_usuario = matriculas.alunos_id
+and matriculas.alunos_id = usuarios.id_usuario
+and turmas.id = matriculas.turmas_id
+and DATEADD(dd,DATEDIFF(dd,0,GETDATE()),0) > turmas.data_final;
+
+if SQLCA.SQLCODE < 0 Then
+	f_MessageBox('Erro!', 'Ocorreu um erro ao realizar a manutenção automática de matrículas~r~rFeche o Sistema e tente novamente', '','')
+end if
+
+
+end subroutine
+

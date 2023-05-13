@@ -1,0 +1,57 @@
+﻿$PBExportHeader$f_permissaoacessomenu.srf
+$PBExportComments$Função para Tratativa de Acesso aos Menus, deve ser chamada em todas as telas.
+global type f_permissaoacessomenu from function_object
+end type
+
+forward prototypes
+global function boolean f_permissaoacessomenu ()
+end prototypes
+
+global function boolean f_permissaoacessomenu ();//---------------------------------------------------------------------------------------
+//  Função  : f_PermissaoAcessoMenu
+//  Objetivo: Fazer Tratativa de Acesso dos Menus de acordo com o nível do usuário
+//  Retorno : Boolean
+//---------------------------------------------------------------------------------------
+
+//Acessos de Instrutores
+if vgs_TipoAcesso = 'I' Then
+	m_principal.m_0.m_cursos.enabled = false
+	m_principal.m_0.m_cursos.visible = false
+	
+	m_principal.m_0.m_matrículas.enabled = false
+	m_principal.m_0.m_matrículas.visible = false
+	
+	m_principal.m_0.m_turmas.enabled = false
+	m_principal.m_0.m_turmas.visible = false
+	
+	m_principal.m_0.m_instrutores.enabled = false
+	m_principal.m_0.m_instrutores.visible = false
+	
+	m_principal.m_manutenção.m_matrículas1.enabled = false
+	m_principal.m_manutenção.m_matrículas1.visible = false
+	
+	m_principal.m_manutenção.m_sistema.enabled = false
+	m_principal.m_manutenção.m_sistema.visible = false
+	
+End if
+
+//Acesso de Alunos
+if vgs_TipoAcesso = 'A' Then
+	
+	//Bloqueia Acesso ao Menu Cadastros
+	m_principal.m_0.enabled = false
+	m_principal.m_0.visible = false
+	
+	//Bloqueia Acesso ao Menu Manutenção
+	m_principal.m_manutenção.enabled = false
+	m_principal.m_manutenção.visible = false
+	
+	//Bloqueia Acesso ao Menu Consultas
+	m_principal.m_consultas.enabled = false
+	m_principal.m_consultas.visible = false
+	
+End if
+
+return True
+end function
+

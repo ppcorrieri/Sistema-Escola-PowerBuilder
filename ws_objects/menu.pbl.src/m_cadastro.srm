@@ -1,0 +1,750 @@
+﻿$PBExportHeader$m_cadastro.srm
+$PBExportComments$Menu de Cadastro
+forward
+global type m_cadastro from m_principal
+end type
+type m_cad from menu within m_cadastro
+end type
+type m_inserir from menu within m_cad
+end type
+type m_excluir from menu within m_cad
+end type
+type m_recuperar from menu within m_cad
+end type
+type m_editar from menu within m_cad
+end type
+type m_gravar from menu within m_cad
+end type
+type m_deletar from menu within m_cad
+end type
+type m_abandonar from menu within m_cad
+end type
+type m_cad from menu within m_cadastro
+m_inserir m_inserir
+m_excluir m_excluir
+m_recuperar m_recuperar
+m_editar m_editar
+m_gravar m_gravar
+m_deletar m_deletar
+m_abandonar m_abandonar
+end type
+global type m_cadastro from m_principal
+m_cad m_cad
+end type
+end forward
+
+global type m_cadastro from m_principal
+m_cad m_cad
+end type
+global m_cadastro m_cadastro
+
+on m_cadastro.create
+m_cadastro=this
+call super::create
+this.m_cad=create m_cad
+this.Item[UpperBound(this.Item)+1]=this.m_cad
+end on
+
+on m_cadastro.destroy
+call super::destroy
+destroy(this.m_cad)
+end on
+
+type m_arquivo from m_principal`m_arquivo within m_cadastro
+end type
+
+on m_arquivo.create
+call super::create
+end on
+
+on m_arquivo.destroy
+call super::destroy
+end on
+
+type m_meuperfil from m_principal`m_meuperfil within m_arquivo
+end type
+
+on m_meuperfil.create
+call super::create
+end on
+
+on m_meuperfil.destroy
+call super::destroy
+end on
+
+type m_sair from m_principal`m_sair within m_arquivo
+end type
+
+on m_sair.create
+call super::create
+end on
+
+on m_sair.destroy
+call super::destroy
+end on
+
+type m_0 from m_principal`m_0 within m_cadastro
+end type
+
+on m_0.create
+call super::create
+end on
+
+on m_0.destroy
+call super::destroy
+end on
+
+type m_instrutores from m_principal`m_instrutores within m_0
+end type
+
+on m_instrutores.create
+call super::create
+end on
+
+on m_instrutores.destroy
+call super::destroy
+end on
+
+type m_1novoinstrutor from m_principal`m_1novoinstrutor within m_instrutores
+end type
+
+on m_1novoinstrutor.create
+call super::create
+end on
+
+on m_1novoinstrutor.destroy
+call super::destroy
+end on
+
+type m_cursos from m_principal`m_cursos within m_0
+end type
+
+on m_cursos.create
+call super::create
+end on
+
+on m_cursos.destroy
+call super::destroy
+end on
+
+type m_1novocurso from m_principal`m_1novocurso within m_cursos
+end type
+
+on m_1novocurso.create
+call super::create
+end on
+
+on m_1novocurso.destroy
+call super::destroy
+end on
+
+type m_alunos from m_principal`m_alunos within m_0
+end type
+
+on m_alunos.create
+call super::create
+end on
+
+on m_alunos.destroy
+call super::destroy
+end on
+
+type m_3 from m_principal`m_3 within m_alunos
+end type
+
+on m_3.create
+call super::create
+end on
+
+on m_3.destroy
+call super::destroy
+end on
+
+type m_matrículas from m_principal`m_matrículas within m_0
+end type
+
+on m_matrículas.create
+call super::create
+end on
+
+on m_matrículas.destroy
+call super::destroy
+end on
+
+type m_1novoaluno from m_principal`m_1novoaluno within m_matrículas
+end type
+
+on m_1novoaluno.create
+call super::create
+end on
+
+on m_1novoaluno.destroy
+call super::destroy
+end on
+
+type m_turmas from m_principal`m_turmas within m_0
+end type
+
+on m_turmas.create
+call super::create
+end on
+
+on m_turmas.destroy
+call super::destroy
+end on
+
+type m_1novaturma from m_principal`m_1novaturma within m_turmas
+end type
+
+on m_1novaturma.create
+call super::create
+end on
+
+on m_1novaturma.destroy
+call super::destroy
+end on
+
+type m_manutenção from m_principal`m_manutenção within m_cadastro
+end type
+
+on m_manutenção.create
+call super::create
+end on
+
+on m_manutenção.destroy
+call super::destroy
+end on
+
+type m_sistema from m_principal`m_sistema within m_manutenção
+end type
+
+on m_sistema.create
+call super::create
+end on
+
+on m_sistema.destroy
+call super::destroy
+end on
+
+type m_parâmetrosdosistema from m_principal`m_parâmetrosdosistema within m_sistema
+end type
+
+on m_parâmetrosdosistema.create
+call super::create
+end on
+
+on m_parâmetrosdosistema.destroy
+call super::destroy
+end on
+
+type m_turmas0 from m_principal`m_turmas0 within m_manutenção
+end type
+
+on m_turmas0.create
+call super::create
+end on
+
+on m_turmas0.destroy
+call super::destroy
+end on
+
+type m_manutençãodeturma from m_principal`m_manutençãodeturma within m_turmas0
+end type
+
+on m_manutençãodeturma.create
+call super::create
+end on
+
+on m_manutençãodeturma.destroy
+call super::destroy
+end on
+
+type m_tickets0 from m_principal`m_tickets0 within m_manutenção
+end type
+
+on m_tickets0.create
+call super::create
+end on
+
+on m_tickets0.destroy
+call super::destroy
+end on
+
+type m_manutençãoconsultagerencialdetickets from m_principal`m_manutençãoconsultagerencialdetickets within m_tickets0
+end type
+
+on m_manutençãoconsultagerencialdetickets.create
+call super::create
+end on
+
+on m_manutençãoconsultagerencialdetickets.destroy
+call super::destroy
+end on
+
+type m_matrículas1 from m_principal`m_matrículas1 within m_manutenção
+end type
+
+on m_matrículas1.create
+call super::create
+end on
+
+on m_matrículas1.destroy
+call super::destroy
+end on
+
+type m_finalizarmatrícula from m_principal`m_finalizarmatrícula within m_matrículas1
+end type
+
+on m_finalizarmatrícula.create
+call super::create
+end on
+
+on m_finalizarmatrícula.destroy
+call super::destroy
+end on
+
+type m_consultas from m_principal`m_consultas within m_cadastro
+end type
+
+on m_consultas.create
+call super::create
+end on
+
+on m_consultas.destroy
+call super::destroy
+end on
+
+type m_alunos0 from m_principal`m_alunos0 within m_consultas
+end type
+
+on m_alunos0.create
+call super::create
+end on
+
+on m_alunos0.destroy
+call super::destroy
+end on
+
+type m_consultardadosdealunos from m_principal`m_consultardadosdealunos within m_alunos0
+end type
+
+on m_consultardadosdealunos.create
+call super::create
+end on
+
+on m_consultardadosdealunos.destroy
+call super::destroy
+end on
+
+type m_matrículas0 from m_principal`m_matrículas0 within m_consultas
+end type
+
+on m_matrículas0.create
+call super::create
+end on
+
+on m_matrículas0.destroy
+call super::destroy
+end on
+
+type m_analíticodematrículas from m_principal`m_analíticodematrículas within m_matrículas0
+end type
+
+on m_analíticodematrículas.create
+call super::create
+end on
+
+on m_analíticodematrículas.destroy
+call super::destroy
+end on
+
+type m_turmas1 from m_principal`m_turmas1 within m_consultas
+end type
+
+on m_turmas1.create
+call super::create
+end on
+
+on m_turmas1.destroy
+call super::destroy
+end on
+
+type m_acompanhamentodeturmas from m_principal`m_acompanhamentodeturmas within m_turmas1
+end type
+
+on m_acompanhamentodeturmas.create
+call super::create
+end on
+
+on m_acompanhamentodeturmas.destroy
+call super::destroy
+end on
+
+type m_serviços from m_principal`m_serviços within m_cadastro
+end type
+
+on m_serviços.create
+call super::create
+end on
+
+on m_serviços.destroy
+call super::destroy
+end on
+
+type m_gerardeclaraçãodematrícula from m_principal`m_gerardeclaraçãodematrícula within m_serviços
+end type
+
+on m_gerardeclaraçãodematrícula.create
+call super::create
+end on
+
+on m_gerardeclaraçãodematrícula.destroy
+call super::destroy
+end on
+
+type m_sobre from m_principal`m_sobre within m_cadastro
+end type
+
+on m_sobre.create
+call super::create
+end on
+
+on m_sobre.destroy
+call super::destroy
+end on
+
+type m_sobreosistema from m_principal`m_sobreosistema within m_sobre
+end type
+
+on m_sobreosistema.create
+call super::create
+end on
+
+on m_sobreosistema.destroy
+call super::destroy
+end on
+
+type m_tickets from m_principal`m_tickets within m_sobre
+end type
+
+on m_tickets.create
+call super::create
+end on
+
+on m_tickets.destroy
+call super::destroy
+end on
+
+type m_novoticket from m_principal`m_novoticket within m_tickets
+end type
+
+on m_novoticket.create
+call super::create
+end on
+
+on m_novoticket.destroy
+call super::destroy
+end on
+
+type m_meustickets from m_principal`m_meustickets within m_tickets
+end type
+
+on m_meustickets.create
+call super::create
+end on
+
+on m_meustickets.destroy
+call super::destroy
+end on
+
+type m_fecharjanela from m_principal`m_fecharjanela within m_cadastro
+end type
+
+on m_fecharjanela.create
+call super::create
+end on
+
+on m_fecharjanela.destroy
+call super::destroy
+end on
+
+type m_cad from menu within m_cadastro
+m_inserir m_inserir
+m_excluir m_excluir
+m_recuperar m_recuperar
+m_editar m_editar
+m_gravar m_gravar
+m_deletar m_deletar
+m_abandonar m_abandonar
+end type
+
+on m_cad.create
+call super::create
+this.visible = false
+this.text = "Cad"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+this.m_inserir=create m_inserir
+this.m_excluir=create m_excluir
+this.m_recuperar=create m_recuperar
+this.m_editar=create m_editar
+this.m_gravar=create m_gravar
+this.m_deletar=create m_deletar
+this.m_abandonar=create m_abandonar
+this.Item[UpperBound(this.Item)+1]=this.m_inserir
+this.Item[UpperBound(this.Item)+1]=this.m_excluir
+this.Item[UpperBound(this.Item)+1]=this.m_recuperar
+this.Item[UpperBound(this.Item)+1]=this.m_editar
+this.Item[UpperBound(this.Item)+1]=this.m_gravar
+this.Item[UpperBound(this.Item)+1]=this.m_deletar
+this.Item[UpperBound(this.Item)+1]=this.m_abandonar
+end on
+
+on m_cad.destroy
+call super::destroy
+destroy(this.m_inserir)
+destroy(this.m_excluir)
+destroy(this.m_recuperar)
+destroy(this.m_editar)
+destroy(this.m_gravar)
+destroy(this.m_deletar)
+destroy(this.m_abandonar)
+end on
+
+type m_inserir from menu within m_cad
+end type
+
+on m_inserir.create
+call super::create
+this.text = "Inserir"
+this.microhelp = "Inserir"
+this.toolbaritemname = "C:\Pedro Paulo de Oliveira Corrieri\PROJETO FINAL PB\IMG\icons\icons8-plus-48_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_inserir.destroy
+call super::destroy
+end on
+
+event clicked;parentWindow.triggerEvent ('u_Inserir_Linha')
+end event
+
+type m_excluir from menu within m_cad
+end type
+
+on m_excluir.create
+call super::create
+this.text = "Excluir"
+this.microhelp = "Excluir"
+this.toolbaritemname = "C:\Pedro Paulo de Oliveira Corrieri\PROJETO FINAL PB\IMG\icons\icons8-minus-48_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_excluir.destroy
+call super::destroy
+end on
+
+event clicked;parentWindow.triggerEvent ('u_Excluir_Linha')
+end event
+
+type m_recuperar from menu within m_cad
+end type
+
+on m_recuperar.create
+call super::create
+this.text = "Recuperar"
+this.microhelp = "Recuperar"
+this.toolbaritemname = "C:\Pedro Paulo de Oliveira Corrieri\PROJETO FINAL PB\IMG\icons\icons8-search-48 (1)_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_recuperar.destroy
+call super::destroy
+end on
+
+event clicked;parentWindow.triggerEvent ('u_Retrieve_Dados')
+end event
+
+type m_editar from menu within m_cad
+end type
+
+event clicked;parentWindow.triggerEvent ('u_Valida_Get')
+end event
+
+on m_editar.create
+call super::create
+this.text = "Editar"
+this.microhelp = "Editar"
+this.toolbaritemname = "C:\Pedro Paulo de Oliveira Corrieri\PROJETO FINAL PB\IMG\icons\icons8-signing-a-document-48_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_editar.destroy
+call super::destroy
+end on
+
+type m_gravar from menu within m_cad
+end type
+
+on m_gravar.create
+call super::create
+this.text = "Gravar"
+this.microhelp = "Gravar"
+this.toolbaritemname = "C:\Pedro Paulo de Oliveira Corrieri\PROJETO FINAL PB\IMG\icons\icons8-save-48_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_gravar.destroy
+call super::destroy
+end on
+
+event clicked;parentWindow.triggerEvent ('u_Valida_Dados')
+end event
+
+type m_deletar from menu within m_cad
+end type
+
+on m_deletar.create
+call super::create
+this.text = "Deletar"
+this.microhelp = "Deletar"
+this.toolbaritemname = "C:\Pedro Paulo de Oliveira Corrieri\PROJETO FINAL PB\IMG\icons\icons8-remove-48_resized.png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_deletar.destroy
+call super::destroy
+end on
+
+event clicked;parentWindow.triggerEvent ('u_Delete_Dados')
+end event
+
+type m_abandonar from menu within m_cad
+end type
+
+on m_abandonar.create
+call super::create
+this.text = "Abandonar"
+this.microhelp = "Abandonar"
+this.toolbaritemname = "C:\Pedro Paulo de Oliveira Corrieri\PROJETO FINAL PB\IMG\icons\icons8-close-48 (1).png"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_abandonar.destroy
+call super::destroy
+end on
+
+event clicked;parentWindow.triggerEvent ('u_abandonar_cadastro')
+end event
+

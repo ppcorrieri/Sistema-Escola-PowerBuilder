@@ -1,0 +1,32 @@
+﻿$PBExportHeader$f_finalizaturmaautomatica.srf
+$PBExportComments$Função para Finalizar Turma de Forma Automática
+global type f_finalizaturmaautomatica from function_object
+end type
+
+forward prototypes
+global subroutine f_finalizaturmaautomatica ()
+end prototypes
+
+global subroutine f_finalizaturmaautomatica ();//---------------------------------------------------------------------------------------
+//  Função  : f_FinalizaTurmaAutomatica
+//  Objetivo: Ao Abrir o Sistema, é feito as seguintes verificações
+//				  Verifica se para a turma X existe alguma matrícula
+//				  Não faz sentidos existirem turmas que já deram início ainda estarem cadastradas
+//				  Tendo em vista que Alunos não podem entrar em turmas que já deram início às atividades
+//				  Caso seja uma turma nova, existe um prazo de 1 semana para efetuar as matrículas
+//				  		-> Caso ultrapasse serão deletadas
+//---------------------------------------------------------------------------------------
+
+DELETE FROM turmas
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM matriculas
+  WHERE matriculas.turmas_id = turmas.id
+)
+AND turmas.data_inicio < DATEADD(WEEK, -1, GETDATE());
+
+if SQLCA.SQLCODE < 0 Then
+	f_MessageBox('Erro!', 'Ocorreu um erro ao realizar a manutenção automática de turmas~r~rFeche o Sistema e tente novamente', '','')
+end if
+end subroutine
+
