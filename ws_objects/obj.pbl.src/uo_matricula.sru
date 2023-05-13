@@ -42,15 +42,11 @@ SELECT count(*)
    AND DATEADD(dd,DATEDIFF(dd,0,GETDATE()),0) <= turmas.data_final
    AND matriculas.turmas_id = turmas.id;
 
-//if sqlca.SQLCODE < 0 Then
-//	return
-//end if
-
-if vll_Count > 0 Then
-	return True
-else
-	return false
-end if
+if sqlca.SQLCODE < 0 Then
+		return False
+	else
+		return True //OK
+	end if
 	
 	
 	
@@ -67,10 +63,10 @@ and matriculas.turmas_id = :p_id_turmas
 and alunos_id is not null;
 
 
-if (vliCount = 0 )Then
-	return False
-Else
-	return True
+if sqlca.SQLCODE < 0 Then
+		return False
+else
+	return True //OK
 end if
 end function
 
@@ -108,9 +104,11 @@ public function boolean of_obtem_dados_matricula (integer p_id_usuario);//======
 	 AND al.id_usuario = matriculas.alunos_id
 	 AND al.id_usuario = :p_id_usuario;
 
-//if sqlca.SQLCODE < 0 Then
-//	return
-//end if
+if sqlca.SQLCODE < 0 Then
+	return False
+else
+	return True
+end if
 
 return True
 end function
