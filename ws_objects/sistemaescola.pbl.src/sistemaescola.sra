@@ -45,6 +45,7 @@ String vgs_Id_Usuario_Impressao_Visual
 
  
 end variables
+
 global type sistemaescola from application
 string appname = "sistemaescola"
 string themepath = "C:\Program Files (x86)\Appeon\PowerBuilder 22.0\IDE\theme"
@@ -116,8 +117,6 @@ CONNECT USING SQLCA;
 // Verifica o Erro de Conexão
 IF SQLCA.SQLCode < 0 THEN 
 	MessageBox("Erro de Conexão", SQLCA.SQLErrText,Exclamation!)
-ELSE
-	//MessageBox("Conectado", "Conectado com Sucesso!",Exclamation!)
 END IF
 
 //Abre a Janela Principal da Aplicação
