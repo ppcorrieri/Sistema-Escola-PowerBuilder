@@ -70,8 +70,11 @@ type m_turmas0 from menu within m_manutenção
 end type
 type m_manutençãodeturma from menu within m_turmas0
 end type
+type m_darpresenças from menu within m_turmas0
+end type
 type m_turmas0 from menu within m_manutenção
 m_manutençãodeturma m_manutençãodeturma
+m_darpresenças m_darpresenças
 end type
 type m_tickets0 from menu within m_manutenção
 end type
@@ -801,6 +804,7 @@ end on
 
 type m_turmas0 from menu within m_manutenção
 m_manutençãodeturma m_manutençãodeturma
+m_darpresenças m_darpresenças
 end type
 
 on m_turmas0.create
@@ -822,12 +826,15 @@ this.toolbarbackcolor = 1073741824
 this.toolbarhighlightcolor = 31908016
 this.bitmapgradient = true
 this.m_manutençãodeturma=create m_manutençãodeturma
+this.m_darpresenças=create m_darpresenças
 this.Item[UpperBound(this.Item)+1]=this.m_manutençãodeturma
+this.Item[UpperBound(this.Item)+1]=this.m_darpresenças
 end on
 
 on m_turmas0.destroy
 call super::destroy
 destroy(this.m_manutençãodeturma)
+destroy(this.m_darpresenças)
 end on
 
 type m_manutençãodeturma from menu within m_turmas0
@@ -860,6 +867,37 @@ this.bitmapgradient = true
 end on
 
 on m_manutençãodeturma.destroy
+call super::destroy
+end on
+
+type m_darpresenças from menu within m_turmas0
+end type
+
+event clicked;f_FechaJanelaAtiva()
+OpenSheet(w_presencas_turma, w_principal, 1, Original!)
+end event
+
+on m_darpresenças.create
+call super::create
+this.text = "Dar Presenças"
+this.menutextcolor = 31908016
+this.menubackcolor = 1073741824
+this.menuhighlightcolor = 1073741824
+this.textsize = -10
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 31908016
+this.bitmapbackcolor = 31908016
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 1073741824
+this.toolbarhighlightcolor = 31908016
+this.bitmapgradient = true
+end on
+
+on m_darpresenças.destroy
 call super::destroy
 end on
 

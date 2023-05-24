@@ -121,9 +121,9 @@ end event
 
 type st_msg from statictext within w_messagebox
 integer x = 101
-integer y = 120
+integer y = 76
 integer width = 1591
-integer height = 460
+integer height = 504
 integer textsize = -11
 integer weight = 400
 fontpitch fontpitch = variable!

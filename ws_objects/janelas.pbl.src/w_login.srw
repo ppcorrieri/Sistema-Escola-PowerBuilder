@@ -181,6 +181,7 @@ fontpitch fontpitch = variable!
 fontfamily fontfamily = swiss!
 string facename = "Segoe UI"
 long textcolor = 33554432
+string text = "123456"
 boolean password = true
 borderstyle borderstyle = stylelowered!
 end type
@@ -198,6 +199,7 @@ fontpitch fontpitch = variable!
 fontfamily fontfamily = swiss!
 string facename = "Segoe UI"
 long textcolor = 33554432
+string text = "admin@admin.com"
 borderstyle borderstyle = stylelowered!
 end type
 
